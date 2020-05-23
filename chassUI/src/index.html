@@ -1,0 +1,44 @@
+<html>
+<head>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  
+</head>
+
+<body>
+
+<!-- DIVS --> 
+<div id="react-container" class="board-parent"></div>
+<div id="container"></div>
+<div id="root"></div>
+<div id="board" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<div id="test" draggable="true" ondragstart="dragStart(event)" ><img src='public/black_pawn.png' class='pieceImage' id="image"/></div>
+
+    <script type="text/javascript">
+         function dragStart(ev) {
+           console.log('inicia drag') ;
+            ev.dataTransfer.setData("text", ev.target.id);
+            return true;
+         }
+         
+         function allowDrop(ev){
+               ev.preventDefault();
+            }
+        
+        function drop(ev){
+           ev.preventDefault();
+           var data = ev.dataTransfer.getData("text");
+           console.log(ev.target);
+            console.log(data);
+            ev.target.appendChild(document.getElementById(data));
+        }
+      </script>
+
+    
+    <script type="text/javascript" src="bundleWP.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    
+</body>
+
+</html>

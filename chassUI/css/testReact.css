@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background:#92bde7;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+}
+
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(8, 76px);
+  text-align: center
+  
+}
+
+.col {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    
+    border-style:ridge;
+    width: 76;
+    height: 76;
+  
+
+}
+
+
+.pieceImage {
+    width: 52;
+    height: 52;
+    border: none; 
+    display: block; 
+    vertical-align: middle;
+}

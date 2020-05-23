@@ -1,0 +1,43 @@
+<html>
+<head>
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+<script src="testReact.js" type="text/jsx"></script>
+<link rel="stylesheet" href="testReact.css" >
+</head>
+
+<body>
+
+<!-- DIVS --> 
+<div id="container"></div>
+<div id="root"></div>
+<div id="board" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<div id="test" draggable="true" ondragstart="dragStart(event)" ><img src='public/black_pawn.png' class='pieceImage' id="image"/></div>
+
+    <script type="text/javascript">
+         function dragStart(ev) {
+           console.log('inicia drag') ;
+            ev.dataTransfer.setData("text", ev.target.id);
+            return true;
+         }
+         
+         function allowDrop(ev){
+               ev.preventDefault();
+            }
+        
+        function drop(ev){
+           ev.preventDefault();
+           var data = ev.dataTransfer.getData("text");
+           console.log(ev.target);
+            console.log(data);
+            ev.target.appendChild(document.getElementById(data));
+        }
+      </script>
+
+    
+    
+</body>
+
+</html>
